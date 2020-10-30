@@ -1126,6 +1126,14 @@ const MacroUISelectTarget = ({ index, id, label }) => {
 const PanelUISelectControl = ({ index, id, label, options }) => {
     const onChange = e => {
         prefs.extrapanels[index][id] = e.target.value
+        if (id == "type" && e.target.value == "camera") {
+            if (!prefs.extrapanels[index]["source"].startsWith("/snap")) {
+                prefs.extrapanels[index]["source"] = "/snap"
+                document.getElementById(
+                    "panel_source_" + index + "-UI-input"
+                ).value = "/snap"
+            }
+        }
         updateState(id, index, "panel")
     }
     const onFocus = e => {
@@ -1549,10 +1557,10 @@ const ControlListLine = ({ data, index, target }) => {
                 {T("S161")}
             </option>
         )
-        if (typeof esp3dSettings.Cam_ID != "undefined") {
+        if (typeof esp3dSettings.Cam_name != "undefined") {
             optionstype.push(
                 <option value="camera" title={T("S162")}>
-                    {T("S162")}
+                    {esp3dSettings.Cam_name}
                 </option>
             )
         }
