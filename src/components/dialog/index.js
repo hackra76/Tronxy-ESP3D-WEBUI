@@ -281,7 +281,6 @@ const DialogPage = () => {
     useEffect(() => {
         disableNode(document.getElementById("mainwindow"), true)
     })
-    console.log(dialogData)
     let classname = "modal d-block"
     let iconTitle = dialogData.icontitle
     let iconMsg
@@ -317,7 +316,7 @@ const DialogPage = () => {
             if (dialogData.numError) {
                 iconTitle = <AlertTriangle color="red" />
                 beepError()
-                if (!title) Title = T("S22")
+                if (!title) title = T("S22")
                 if (!btn1Txt) btn1Txt = T("S24")
                 if (!btn1Col) btn1Col = "btn-primary"
                 if (dialogData.numError) {
