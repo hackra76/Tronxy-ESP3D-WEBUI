@@ -472,7 +472,11 @@ function canDelete(entry) {
  * Check if can print file
  */
 function canPrint(entry) {
-    if (currentFilesType == "FS" || entry.size == -1 || currentFilesType == "SDDirect") {
+    if (
+        currentFilesType == "FS" ||
+        entry.size == -1 ||
+        currentFilesType == "SDDirect"
+    ) {
         return false
     }
     let filefilter = prefs.filesfilter.trim()
@@ -1267,7 +1271,7 @@ function PrepareUpload() {
         uploadFiles = document.getElementById("uploadFilesControl").files
         let fileList = []
         let message = []
-        fileList.push(<div>{T("S30")}</div>)
+        fileList.push(<div>{T("S31")}</div>)
         fileList.push(<br />)
         for (let i = 0; i < uploadFiles.length; i++) {
             fileList.push(<li>{uploadFiles[i].name}</li>)

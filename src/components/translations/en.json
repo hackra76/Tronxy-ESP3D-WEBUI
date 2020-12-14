@@ -270,7 +270,9 @@
     "smoothieware":"Smoothieware",
     "unknown":"Unknown",
     "baud" : "Baud rate",
-    "bootdelay" : "Boot delay (ms)",
+    "verbose" : "Verbose",
+    "bootdelay" : "Delay (ms)",
+    "boot" : "Boot sequence",
     "session timeout" : "Inactivity timeout (min)",
     "outputmsg" : "Output message",
     "M117" : "Printer screen",
@@ -280,5 +282,6 @@
     "intervalms" : "Interval (millisec)",
     "modem": "Modem",
     "light" : "Light",
-    "grbl" : "Grbl"
+    "grbl" : "Grbl",
+    "SD updater":"SD updater"
 }
